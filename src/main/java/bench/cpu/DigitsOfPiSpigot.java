@@ -7,6 +7,7 @@ public class DigitsOfPiSpigot {
     private int[] digits;
     private StringBuilder predigits = new StringBuilder();
 
+
     // Allocate digits[]
     public boolean init(int k) {
         int array_size_needed = k * 10 / 3 + 1;
