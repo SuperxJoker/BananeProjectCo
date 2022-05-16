@@ -2,42 +2,42 @@ package bench.cpu;
 
 public class generateSieveOfEratosthenes {
 
-    public static int[] generatePrimes(int maxValue) {
-        if (maxValue >= 2) // the only valid case
+    // Function to print prime numbers in the range of a given number `n`
+    public void generateSieveOfEratosthenes2(int n)
+    {
+        int[] a = new int[n + 1];
+
+        for (int i = 0; i <= n; i++) {      // initialize all numbers as prime
+            a[i] = 1;
+        }
+
+        for (int i = 2; i <= Math.sqrt(n); i++)
         {
-            // declarations
-            int s = maxValue + 1; // size of array
-            boolean[] f = new boolean[s];
-            int i;
-            // initialize array to true.
-            for (i = 0; i < s; i++)
-                f[i] = true;
-            // get rid of known non-primes
-            f[0] = f[1] = false;
-            // sieve
-            int j;
-            for (i = 2; i < Math.sqrt(s) + 1; i++) {
-                if (f[i]) // if i is uncrossed, cross its multiples.
-                {
-                    for (j = 2 * i; j < s; j += i)
-                        f[j] = false; // multiple is not prime
+            if (a[i] == 1)                  // checks if `i` is prime
+            {
+                for (int j = 2; i * j <= n; j++) {
+                    a[i * j] = 0;           // multiples of `i` are not prime
                 }
             }
-            // how many primes are there?
-            int count = 0;
-            for (i = 0; i < s; i++) {
-                if (f[i])
-                    count++; // bump count.
+        }
+
+        /*for (int i = 2; i <= n; i++)
+        {
+            if (a[i] == 1) {
+                System.out.print(i + " ");  // prints primes
             }
-            int[] primes = new int[count];
-            // move the primes into the result
-            for (i = 0, j = 0; i < s; i++) {
-                if (f[i]) // if prime
-                    primes[j++] = i;
+        }*/
+        int j = 0;
+        j = n;
+        while (j!=1){
+            if(a[j] == 1) {
+                System.out.println(j);
+                break;
             }
-            return primes; // return the primes
-        } else
-            // maxValue < 2
-            return new int[0]; // return null array if bad input.
+            else j--;
+            }
+        }
+
+        //System.out.println(n);
     }
-}
+

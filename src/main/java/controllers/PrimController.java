@@ -1,9 +1,6 @@
 package controllers;
 
-import bench.cpu.DigitsOfPiSpigot;
 import bench.cpu.generateSieveOfEratosthenes;
-import bench.cpu.sieveOfEratosthenes;
-import bench.cpu.MyThread;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -51,22 +48,22 @@ public class PrimController implements Initializable {
         timeLabel.setText(String.valueOf(time1));
         String scoreString = String.format("%.0f",k/Math.sqrt(time1));
 */
-        sieveOfEratosthenes test = new sieveOfEratosthenes();
+        generateSieveOfEratosthenes test = new generateSieveOfEratosthenes();
         k = Integer.parseInt(String.valueOf(digitsField.getText()));
        // test.sieveOfEratosthenes(k);
         Timer t = new Timer();
         t.start();
-        test.sieveOfEratosthenes(k);
+        test.generateSieveOfEratosthenes2(k);
         timetaken = t.stop();
-        int count = test.getContor();
+       // int count = test.getContor();
 
         time1 = TimeUnit.toTimeUnit(timetaken, TimeUnit.Milli);
         timeLabel.setText(String.valueOf(time1));
-        String scoreString = String.format("%.0f",Math.sqrt(count)/Math.log(time1));
+        String scoreString = String.format("%.0f",Math.sqrt(k)/Math.log(time1*1000)+1);
         displayScore.setText(String.valueOf(scoreString));
 
 
-        System.out.println(count);
+       // System.out.println(count);
     }
 
         @Override
