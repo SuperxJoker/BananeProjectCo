@@ -19,6 +19,8 @@ public class StartInterface implements Initializable {
     private Button bananaPi;
     @FXML
     private Button bananaPrim;
+    @FXML
+    private Button fibbobanana;
 
     public void bananaPiButtonOnAction(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("testController.fxml"));
@@ -35,7 +37,13 @@ public class StartInterface implements Initializable {
         newstage.setTitle("Application");
         newstage.setScene(new Scene(root1, 818, 484));
         newstage.show();
-
+    }
+    public void fibbobananaButtonOnAction(ActionEvent event) throws IOException {
+        Parent root2 = FXMLLoader.load(getClass().getResource("fibboController.fxml"));
+        Stage fibbostage = new Stage();
+        fibbostage.setTitle("Fibbobanana");
+        fibbostage.setScene(new Scene(root2,818,484));
+        fibbostage.show();
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
