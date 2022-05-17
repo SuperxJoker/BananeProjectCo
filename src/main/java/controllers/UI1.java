@@ -18,6 +18,7 @@ public class UI1 implements Initializable {
     @FXML
     private Button next1;
 
+
     public void next1ButtonOnAction(ActionEvent event) throws IOException {
 
 

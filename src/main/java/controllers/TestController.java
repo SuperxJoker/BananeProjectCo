@@ -87,7 +87,7 @@ public class TestController {
         String scoreString = String.format("%.0f",k/Math.sqrt(newtime));
         scoreName.setVisible(true);
         displayScore.setText(String.valueOf(scoreString));
-       // piArea.setText(d.Digits(k));
+        piArea.setText(d.toDisplay);
 
 
 

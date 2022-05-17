@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StartInterface">
-<right>
+ <right>
       <AnchorPane prefHeight="397.0" prefWidth="734.0" style="-fx-background-color: ffe7ab;" BorderPane.alignment="CENTER">
 
          <children>
