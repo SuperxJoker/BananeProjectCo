@@ -3,25 +3,18 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="484.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TestController">
+<AnchorPane prefHeight="755.0" prefWidth="1166.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TestController">
    <children>
-      <ImageView fitHeight="493.0" fitWidth="818.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Images/banane.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="digitsField" layoutX="318.0" layoutY="293.0" prefHeight="39.0" prefWidth="201.0" promptText="Add number of digits" />
-      <Button fx:id="startButton" layoutX="339.0" layoutY="371.0" mnemonicParsing="false" onAction="#startButtonOnAction" prefHeight="70.0" prefWidth="158.0" text="Start" />
-      <Label fx:id="displayScore" layoutX="48.0" layoutY="437.0" prefHeight="57.0" prefWidth="270.0" text="Score">
+      <TextField fx:id="digitsField" layoutX="30.0" layoutY="123.0" prefHeight="39.0" prefWidth="201.0" promptText="Add number of digits" />
+      <Button fx:id="startButton" layoutX="30.0" layoutY="207.0" mnemonicParsing="false" onAction="#startButtonOnAction" prefHeight="49.0" prefWidth="112.0" text="Start" />
+      <Label fx:id="displayScore" layoutX="30.0" layoutY="268.0" prefHeight="57.0" prefWidth="270.0" text="Score">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="timeLabel" layoutX="472.0" layoutY="441.0" prefHeight="49.0" prefWidth="147.0" text="Time" />
+      <Label fx:id="timeLabel" layoutX="36.0" layoutY="325.0" prefHeight="49.0" prefWidth="147.0" text="Time" />
    </children>
 </AnchorPane>
