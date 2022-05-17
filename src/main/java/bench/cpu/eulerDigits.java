@@ -28,6 +28,7 @@ public class eulerDigits {
         int N=numberOfDigits+9,x=0;
         digits[1]=2;
         digits[0]=0;
+        predigits.append(2.7);
         while(N>9)
         {
             N--;

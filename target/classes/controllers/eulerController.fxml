@@ -46,7 +46,7 @@
       </Label>
       <TextArea fx:id="eulerTextArea" layoutX="240.0" layoutY="70.0" prefHeight="200.0" prefWidth="341.0">
          <font>
-            <Font size="16.0" />
+            <Font size="20.0" />
          </font></TextArea>
       <TextField fx:id="eulerTextField" layoutX="28.0" layoutY="70.0" prefHeight="26.0" prefWidth="174.0" />
       <Button id="big-yellow" fx:id="backButton" layoutX="7.0" layoutY="416.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="58.0" prefWidth="193.0" stylesheets="@../cssfiles/buttons.css" text="BananoMenu" />
