@@ -17,7 +17,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("startInterface.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("no1.fxml"));
         stage.getIcons().add(new Image(("/images/icon.png")));
        // stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Bananas in pyjamas ");
