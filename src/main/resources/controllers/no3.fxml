@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane centerShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UI3">
+<BorderPane centerShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UI3">
     <left>
         <AnchorPane prefHeight="400.0" prefWidth="244.0" BorderPane.alignment="CENTER">
             <children>
@@ -15,7 +15,7 @@
                         <Image url="@../Images/no3.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="next3" layoutX="682.0" layoutY="445.0" mnemonicParsing="false" onAction="#next3ButtonOnAction" prefHeight="35.0" prefWidth="133.0" text="CONTINUE" />
+                <Button id="big-yellow" fx:id="next3" layoutX="647.0" layoutY="413.0" mnemonicParsing="false" onAction="#next3ButtonOnAction" prefHeight="57.0" prefWidth="157.0" stylesheets="@../cssfiles/buttons.css" text="CONTINUE" />
             </children>
         </AnchorPane>
     </left>

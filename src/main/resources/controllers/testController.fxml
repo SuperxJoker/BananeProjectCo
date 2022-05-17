@@ -39,6 +39,9 @@
          </font>
       </Label>
       <Button fx:id="backButton" layoutX="18.0" layoutY="443.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="27.0" prefWidth="146.0" text="BananoMenu" />
-      <TextArea fx:id="piArea" layoutX="375.0" layoutY="87.0" prefHeight="353.0" prefWidth="410.0" />
+      <TextArea fx:id="piArea" layoutX="375.0" layoutY="87.0" prefHeight="353.0" prefWidth="410.0">
+         <font>
+            <Font size="20.0" />
+         </font></TextArea>
    </children>
 </AnchorPane>
