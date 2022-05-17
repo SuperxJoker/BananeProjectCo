@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="475.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EulerController">
+   <children>
+      <Button fx:id="getEulerNumber" layoutX="27.0" layoutY="116.0" mnemonicParsing="false" onAction="#eulerButtonOnAction" prefHeight="69.0" prefWidth="174.0" text="Calculate">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="29.0" layoutY="240.0" text="Time (in milliseconds)">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="25.0" text="Number of digits:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="eulerTimeLabel" layoutX="26.0" layoutY="282.0" prefHeight="20.0" prefWidth="296.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="326.0" text="Score">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="eulerScoreLabel" layoutX="24.0" layoutY="365.0" prefHeight="20.0" prefWidth="194.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="240.0" layoutY="25.0" text="Euler's number:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="eulerTextArea" layoutX="240.0" layoutY="70.0" prefHeight="200.0" prefWidth="341.0">
+         <font>
+            <Font size="16.0" />
+         </font></TextArea>
+      <TextField fx:id="eulerTextField" layoutX="28.0" layoutY="70.0" prefHeight="26.0" prefWidth="174.0" />
+      <Button id="big-yellow" fx:id="backButton" layoutX="7.0" layoutY="416.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="58.0" prefWidth="193.0" stylesheets="@../cssfiles/buttons.css" text="BananoMenu" />
+   </children>
+</AnchorPane>

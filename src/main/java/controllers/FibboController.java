@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -19,17 +18,11 @@ import java.math.BigInteger;
 
 public class FibboController {
     @FXML
-    private Button getfibbonumber;
-    @FXML
-    private Label fibboLabel;
-    @FXML
     private TextField fibboTextField;
     @FXML
     private Label fibboTimeLabel;
     @FXML
     private TextArea fibboArea;
-    @FXML
-    private Button backButton;
     @FXML
     private Label scoreName;
     @FXML
@@ -42,11 +35,11 @@ public class FibboController {
         scoreName.setVisible(false);
     }
 
-    private long timeTaken;
-    private double time;
+    public void fibboButtonOnAction(ActionEvent event)
+    {
+        long timeTaken;
+        double time;
 
-    public void fibboButtonOnAction(ActionEvent event) throws IOException {
-        time = 0;
         int n=Integer.parseInt(String.valueOf(fibboTextField.getText()));
         Timer t = new Timer();
         t.start();
@@ -56,18 +49,17 @@ public class FibboController {
 
         String scoreString = String.format("%.0f",n/Math.sqrt(time));
 
-
         timeName.setVisible(true);
         fibboTimeLabel.setText(String.valueOf(time));
         scoreName.setVisible(true);
         scoreDisplay.setText(String.valueOf(scoreString));
 
     }
+
     public void backButtonOnAction(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("startInterface.fxml"));
         Stage stage = new Stage();
         stage.getIcons().add(new Image(("/images/icon.png")));
-        // stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Bananas in pyjamas ");
         stage.setScene(new Scene(root, 818, 484));
         stage.show();
@@ -76,7 +68,7 @@ public class FibboController {
 
     public void Fibbo(int n)
     {
-        BigInteger a=new BigInteger("1");
+        BigInteger a;
         BigInteger b=new BigInteger("1");
         BigInteger c=new BigInteger("2");
         if(n==1 || n==2){
