@@ -19,6 +19,8 @@ public class UI1 implements Initializable {
     private Button next1;
 
     public void next1ButtonOnAction(ActionEvent event) throws IOException {
+
+
         Parent root = FXMLLoader.load(getClass().getResource("no2.fxml"));
 
         Stage stage = new Stage();
