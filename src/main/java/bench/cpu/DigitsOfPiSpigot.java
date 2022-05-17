@@ -79,7 +79,7 @@ public class DigitsOfPiSpigot {
 
 
 
-    // write the buffered digits
+
     void flushDigits() {
         toDisplay += predigits;
         //System.out.append(predigits);

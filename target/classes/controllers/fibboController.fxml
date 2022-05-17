@@ -45,6 +45,6 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="backButton" layoutX="18.0" layoutY="443.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="27.0" prefWidth="146.0" text="BananoMenu" />
+      <Button id="big-yellow" fx:id="backButton" layoutX="10.0" layoutY="408.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="58.0" prefWidth="193.0" stylesheets="@../cssfiles/buttons.css" text="BananoMenu" />
    </children>
 </AnchorPane>
