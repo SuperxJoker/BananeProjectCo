@@ -64,7 +64,7 @@ public class TestController {
 
     public void startButtonOnAction(ActionEvent event){
 
-       double newtime = 0;
+        double newtime = 0;
 
         DigitsOfPiSpigot d = new DigitsOfPiSpigot();
         k=Integer.parseInt(String.valueOf(digitsField.getText()));
