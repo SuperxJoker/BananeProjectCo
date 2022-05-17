@@ -15,7 +15,7 @@
                   <Image url="@../Images/no1.png" />
                </image>
             </ImageView>
-                <Button fx:id="next1" layoutX="696.9" layoutY="445.0" mnemonicParsing="false" onAction="#next1ButtonOnAction" prefHeight="35.0" prefWidth="118.0" text="NEXT" />
+                <Button fx:id="next1" layoutX="666.0" layoutY="445.0" mnemonicParsing="false" onAction="#next1ButtonOnAction" prefHeight="35.0" prefWidth="149.0" text="CONTINUE" />
          </children>
         </AnchorPane>
     </left>

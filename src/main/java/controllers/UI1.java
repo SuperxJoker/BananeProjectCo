@@ -26,10 +26,19 @@ public class UI1 implements Initializable {
         // stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Bananas in pyjamas");
         stage.setScene(new Scene(root, 818, 484));
+
+
         stage.show();
+    }
+    @FXML
+    public void handleCloseButtonAction(ActionEvent event) {
+        Stage stage = (Stage) next1.getScene().getWindow();
+        stage.close();
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
+
 }
