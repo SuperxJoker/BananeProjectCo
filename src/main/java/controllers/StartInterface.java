@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,24 +25,28 @@ public class StartInterface implements Initializable {
 
     public void bananaPiButtonOnAction(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("testController.fxml"));
+
         Stage stage = new Stage();
+        stage.getIcons().add(new Image(("/images/icon.png")));
         // stage.initStyle(StageStyle.UNDECORATED);
-        stage.setTitle("Application");
+        stage.setTitle("Bananas in pyjamas");
         stage.setScene(new Scene(root, 818, 484));
         stage.show();
     }
     public void bananaPrimButtonOnAction(ActionEvent event) throws IOException {
         Parent root1 = FXMLLoader.load(getClass().getResource("primController.fxml"));
         Stage newstage = new Stage();
+        newstage.getIcons().add(new Image(("/images/icon.png")));
         // stage.initStyle(StageStyle.UNDECORATED);
-        newstage.setTitle("Application");
+        newstage.setTitle("Bananas in pyjamas");
         newstage.setScene(new Scene(root1, 818, 484));
         newstage.show();
     }
     public void fibbobananaButtonOnAction(ActionEvent event) throws IOException {
         Parent root2 = FXMLLoader.load(getClass().getResource("fibboController.fxml"));
         Stage fibbostage = new Stage();
-        fibbostage.setTitle("Fibbobanana");
+        fibbostage.getIcons().add(new Image(("/images/icon.png")));
+        fibbostage.setTitle("Bananas in pyjamas");
         fibbostage.setScene(new Scene(root2,818,484));
         fibbostage.show();
     }

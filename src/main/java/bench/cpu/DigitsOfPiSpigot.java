@@ -1,10 +1,9 @@
 package bench.cpu;
 
-import bench.IBenchmark;
-
 public class DigitsOfPiSpigot {
 
     private int[] digits;
+    private String PIdigits = "";
     private StringBuilder predigits = new StringBuilder();
 
 
@@ -52,7 +51,10 @@ public class DigitsOfPiSpigot {
             if (digit < 9) {
                 flushDigits();
                 // print a decimal after the leading "3"
-                if (iter == 1) System.out.print(".");
+                if (iter == 1) {
+                    PIdigits += ".";
+                    //System.out.print(".");}
+                }
                 addDigit(digit);
             } else if (digit == 9) {
                 addDigit(digit);
@@ -65,6 +67,7 @@ public class DigitsOfPiSpigot {
         }
         flushDigits();
         System.out.println();
+
     }
 
 

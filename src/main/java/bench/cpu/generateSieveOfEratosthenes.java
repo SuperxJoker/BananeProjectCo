@@ -2,6 +2,7 @@ package bench.cpu;
 
 public class generateSieveOfEratosthenes {
 
+    int wanted;
     // Function to print prime numbers in the range of a given number `n`
     public void generateSieveOfEratosthenes2(int n)
     {
@@ -31,11 +32,21 @@ public class generateSieveOfEratosthenes {
         j = n;
         while (j!=1){
             if(a[j] == 1) {
-                System.out.println(j);
+                //System.out.println(j);
+                wanted = j;
                 break;
             }
             else j--;
             }
+        }
+
+        public int getPrim(){
+           return wanted;
+
+        }
+
+        public void setPrim(int newPrim){
+            this.wanted = newPrim;
         }
 
         //System.out.println(n);
