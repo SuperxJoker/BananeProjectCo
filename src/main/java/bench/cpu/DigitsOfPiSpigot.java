@@ -1,10 +1,15 @@
 package bench.cpu;
 
+import java.util.Arrays;
+
 public class DigitsOfPiSpigot {
 
     private int[] digits;
     private String PIdigits = "";
-    private StringBuilder predigits = new StringBuilder();
+    private String Helper = "";
+    public StringBuilder predigits = new StringBuilder();
+    private StringBuilder myString;
+    public String toDisplay = "";
 
 
     // Allocate digits[]
@@ -30,10 +35,10 @@ public class DigitsOfPiSpigot {
         if (!init(k)) return;
 
         for (int iter = 0; iter < k; iter++) {
-            int carry = 0;
+
             // Work backwards through the array, multiplying each digit by 10,
             // carrying the excess and leaving the remainder.
-
+            int carry = 0;
             for (int i=digits.length-1; i > 0; i--) {
                 int numerator = i;
                 int denomenator = i * 2 + 1;
@@ -52,8 +57,8 @@ public class DigitsOfPiSpigot {
                 flushDigits();
                 // print a decimal after the leading "3"
                 if (iter == 1) {
-                    PIdigits += ".";
-                    //System.out.print(".");}
+                    toDisplay += ".";
+                    //System.out.print(".");
                 }
                 addDigit(digit);
             } else if (digit == 9) {
@@ -63,17 +68,21 @@ public class DigitsOfPiSpigot {
                 flushDigits();
                 addDigit(0);
             }
-            System.out.flush();
+            // System.out.flush();
         }
         flushDigits();
         System.out.println();
-
+        //System.out.println(toDisplay);
     }
+
+
+
 
 
     // write the buffered digits
     void flushDigits() {
-
+        toDisplay += predigits;
+        //System.out.append(predigits);
         predigits.setLength(0);
     }
 
@@ -98,3 +107,6 @@ public class DigitsOfPiSpigot {
         }
     }
 }
+
+
+
