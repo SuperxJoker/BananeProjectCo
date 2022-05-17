@@ -32,7 +32,7 @@ public class generateSieveOfEratosthenes {
         j = n;
         while (j!=1){
             if(a[j] == 1) {
-                //System.out.println(j);
+                System.out.println(j);
                 wanted = j;
                 break;
             }
