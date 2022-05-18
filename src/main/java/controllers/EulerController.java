@@ -34,9 +34,16 @@ public class EulerController {
     private Label eulerScoreLabel;
     @FXML
     private ImageView thedancingbanana;
+    @FXML
+    private Label timeText;
+    @FXML
+    private Label scoreText;
+
     public void initialize(){
         eulerTimeLabel.setVisible(false);
         eulerScoreLabel.setVisible(false);
+        timeText.setVisible(false);
+        scoreText.setVisible(false);
 
         TranslateTransition translate = new TranslateTransition();
         translate.setNode(thedancingbanana);
@@ -65,6 +72,8 @@ public class EulerController {
 
         eulerTimeLabel.setVisible(true);
         eulerScoreLabel.setVisible(true);
+        timeText.setVisible(true);
+        scoreText.setVisible(true);
         eulerTimeLabel.setText(String.valueOf(time));
         eulerTextArea.setText(euler.toDisplay);
         eulerScoreLabel.setText(scoreString);
