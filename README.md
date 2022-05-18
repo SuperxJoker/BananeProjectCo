@@ -1,4 +1,4 @@
-# BananeProjectCo
+# Bananas in Pyjamas
 
 Hello dear reader !
 In this repository you will find a funny banana themed project that 
@@ -7,5 +7,5 @@ contains 4 algorithms.
 
 2. Digits of Euler : prints the digits of the Euler number which corresponds the number of digits that the user introduces.
 
-3. Fiboanci: 
+3. Fibonacci: 
 4. Prime number: prints the closest prime number to the one introduced by the user.
