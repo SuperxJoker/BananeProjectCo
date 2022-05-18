@@ -4,11 +4,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="484.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FibboController">
    <children>
+      <ImageView fitHeight="484.0" fitWidth="818.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Images/bananaz.jpg" />
+         </image>
+      </ImageView>
       <TextField fx:id="fibboTextField" layoutX="45.0" layoutY="87.0" prefHeight="65.0" prefWidth="226.0" />
       <Button fx:id="getfibbonumber" layoutX="45.0" layoutY="172.0" mnemonicParsing="false" onAction="#fibboButtonOnAction" prefHeight="65.0" prefWidth="226.0" text="Get Fibbo number">
          <font>
@@ -46,5 +53,10 @@
          </font>
       </Label>
       <Button id="big-yellow" fx:id="backButton" layoutX="10.0" layoutY="408.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="58.0" prefWidth="193.0" stylesheets="@../cssfiles/buttons.css" text="BananoMenu" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="585.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/strugglingbanana.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

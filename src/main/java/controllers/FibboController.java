@@ -3,6 +3,7 @@ package controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -17,6 +18,9 @@ import java.io.IOException;
 import java.math.BigInteger;
 
 public class FibboController {
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
     @FXML
     private TextField fibboTextField;
     @FXML
@@ -57,11 +61,10 @@ public class FibboController {
     }
 
     public void backButtonOnAction(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("startInterface.fxml"));
-        Stage stage = new Stage();
-        stage.getIcons().add(new Image(("/images/icon.png")));
-        stage.setTitle("Bananas in pyjamas ");
-        stage.setScene(new Scene(root, 818, 484));
+        root = FXMLLoader.load(getClass().getResource("startinterface.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
         stage.show();
 
     }
