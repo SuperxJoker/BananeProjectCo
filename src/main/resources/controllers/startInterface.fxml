@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StartInterface">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StageController">
  <right>
       <AnchorPane prefHeight="397.0" prefWidth="734.0" style="-fx-background-color: ffe7ab;" BorderPane.alignment="CENTER">
 
@@ -23,12 +23,12 @@
                </image>
             </ImageView>
 
-            <Button fx:id="bananaPi" layoutX="224.0" layoutY="172.0" mnemonicParsing="false" onAction="#bananaPiButtonOnAction" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: #F2D8B4;" text="BananaPi" />
-            <Button fx:id="bananaPrim" layoutX="476.0" layoutY="170.0" mnemonicParsing="false" onAction="#bananaPrimButtonOnAction" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: #F2D8B4;" text="BananaPrim" />
-            <Button fx:id="fibbobanana" layoutX="224.0" layoutY="255.0" mnemonicParsing="false" onAction="#fibbobananaButtonOnAction" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: #F2D8B4;" text="FIbbobanana" />
+            <Button fx:id="bananaPi" layoutX="224.0" layoutY="172.0" mnemonicParsing="false" onAction="#switchToScene5" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: #F2D8B4;" text="BananaPi" />
+            <Button fx:id="bananaPrim" layoutX="476.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchToScene8" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: #F2D8B4;" text="BananaPrim" />
+            <Button fx:id="fibbobanana" layoutX="224.0" layoutY="255.0" mnemonicParsing="false" onAction="#switchToScene6" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: #F2D8B4;" text="FIbbobanana" />
             <Label layoutX="216.0" layoutY="99.0" text="THE BOOK OF DOOM! BE WARE!" textFill="#fc0000" />
             <Label layoutX="473.0" layoutY="99.0" text="Overusing it may fry your CPU!!" textFill="RED" />
-            <Button fx:id="BananaEuler" layoutX="476.0" layoutY="253.0" mnemonicParsing="false" onAction="#bananaEulerButtonOnAction" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: #F2D8B4;" text="BananaEuler" />
+            <Button fx:id="BananaEuler" layoutX="476.0" layoutY="253.0" mnemonicParsing="false" onAction="#switchToScene7" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: #F2D8B4;" text="BananaEuler" />
 
          </children>
       </AnchorPane>

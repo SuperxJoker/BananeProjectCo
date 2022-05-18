@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -29,7 +30,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class TestController {
-
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
     @FXML
     private Button startButton;
@@ -94,12 +97,10 @@ public class TestController {
 
     }
     public void backButtonOnAction(ActionEvent event) throws IOException {
-        Parent root4 = FXMLLoader.load(getClass().getResource("startInterface.fxml"));
-        Stage stage = new Stage();
-        stage.getIcons().add(new Image(("/images/icon.png")));
-        // stage.initStyle(StageStyle.UNDECORATED);
-        stage.setTitle("Bananas in pyjamas ");
-        stage.setScene(new Scene(root4, 818, 484));
+        root = FXMLLoader.load(getClass().getResource("startinterface.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
         stage.show();
 
     }
