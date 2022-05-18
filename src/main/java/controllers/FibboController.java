@@ -47,6 +47,9 @@ public class FibboController {
         long timeTaken;
         double time;
 
+        FibboController warmup = new FibboController();
+        warmup.Fibbo(100000);
+
         int n=Integer.parseInt(String.valueOf(fibboTextField.getText()));
         FibboController fibbo= new FibboController();
         MyThread mt = new MyThread("FibboController",fibbo,n);

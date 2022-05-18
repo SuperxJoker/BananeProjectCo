@@ -71,6 +71,9 @@ public class PrimController  {
 
        double time1 = 0;
 
+       generateSieveOfEratosthenes warmup = new generateSieveOfEratosthenes();
+       warmup.generateSieveOfEratosthenes2(100000);
+
         generateSieveOfEratosthenes test = new generateSieveOfEratosthenes();
         k = Integer.parseInt(String.valueOf(digitsField.getText()));
         MyThread mt = new MyThread("generateSieveOfEratosthenes",test,k);

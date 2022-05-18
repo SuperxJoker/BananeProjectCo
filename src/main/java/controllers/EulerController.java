@@ -57,6 +57,9 @@ public class EulerController {
 
     public void eulerButtonOnAction(ActionEvent event)
     {
+        eulerDigits warmup = new eulerDigits();
+        warmup.EulerCalc(6000);
+
         long timeTaken;
         double time;
 
