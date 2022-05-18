@@ -1,5 +1,6 @@
 package controllers;
 
+import bench.cpu.MyThread;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +22,8 @@ public class FibboController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private String fNumber;
+
     @FXML
     private TextField fibboTextField;
     @FXML
@@ -44,15 +47,22 @@ public class FibboController {
         long timeTaken;
         double time;
 
+        FibboController warmup = new FibboController();
+        warmup.Fibbo(100000);
+
         int n=Integer.parseInt(String.valueOf(fibboTextField.getText()));
+        FibboController fibbo= new FibboController();
+        MyThread mt = new MyThread("FibboController",fibbo,n);
+
         Timer t = new Timer();
         t.start();
-        Fibbo(n);
+        mt.start();//Fibbo(n); <=> fibbo.Fibbo(n);
         timeTaken=t.stop();
         time = TimeUnit.toTimeUnit(timeTaken,TimeUnit.Milli);
 
         String scoreString = String.format("%.0f",n/Math.sqrt(time));
 
+        fibboArea.setText(fibbo.fNumber);
         timeName.setVisible(true);
         fibboTimeLabel.setText(String.valueOf(time));
         scoreName.setVisible(true);
@@ -75,21 +85,20 @@ public class FibboController {
         BigInteger b=new BigInteger("1");
         BigInteger c=new BigInteger("2");
         if(n==1 || n==2){
-            fibboArea.setText("1");
+            this.fNumber="1";//fibboArea.setText("1");
             return;
         }
         else if(n==3) {
-            fibboArea.setText("2");
-            return;
-        }
+            this.fNumber="1";//fibboArea.setText("2");
+        }else {
 
-        for(int i=4;i<=n;i++)
-        {
-            c=c.add(b);
-            a=b;
-            b=c;
-            b=b.subtract(a);
+            for (int i = 4; i <= n; i++) {
+                c = c.add(b);
+                a = b;
+                b = c;
+                b = b.subtract(a);
+            }
+            this.fNumber=String.valueOf(c);//fibboArea.setText(String.valueOf(c));
         }
-        fibboArea.setText(String.valueOf(c));
     }
 }

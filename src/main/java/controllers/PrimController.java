@@ -1,5 +1,6 @@
 package controllers;
 
+import bench.cpu.MyThread;
 import bench.cpu.generateSieveOfEratosthenes;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
@@ -70,17 +71,22 @@ public class PrimController  {
 
        double time1 = 0;
 
+       generateSieveOfEratosthenes warmup = new generateSieveOfEratosthenes();
+       warmup.generateSieveOfEratosthenes2(100000);
+
         generateSieveOfEratosthenes test = new generateSieveOfEratosthenes();
         k = Integer.parseInt(String.valueOf(digitsField.getText()));
+        MyThread mt = new MyThread("generateSieveOfEratosthenes",test,k);
        // test.sieveOfEratosthenes(k);
         Timer t = new Timer();
         t.start();
-        test.generateSieveOfEratosthenes2(k);
+        mt.start();//test.generateSieveOfEratosthenes2(k);
         timetaken = t.stop();
        // int count = test.getContor();
 
         time1 = TimeUnit.toTimeUnit(timetaken, TimeUnit.Milli);
 
+        test=(generateSieveOfEratosthenes) mt.getBenchClass();
 
         String scoreString = String.format("%.0f",Math.sqrt(k)/Math.log(time1*1000)+1);
 
