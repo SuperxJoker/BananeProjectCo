@@ -29,6 +29,7 @@
             <Label layoutX="216.0" layoutY="99.0" text="THE BOOK OF DOOM! BE WARE!" textFill="#fc0000" />
             <Label layoutX="473.0" layoutY="99.0" text="Overusing it may fry your CPU!!" textFill="RED" />
             <Button fx:id="BananaEuler" layoutX="476.0" layoutY="253.0" mnemonicParsing="false" onAction="#switchToScene7" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: #F2D8B4;" text="BananaEuler" />
+            <Button id="big-yellow" fx:id="backButton" layoutX="526.0" layoutY="411.0" mnemonicParsing="false" onAction="#switchToScene9" prefHeight="58.0" prefWidth="193.0" stylesheets="@../cssfiles/buttons.css" text="Continue" />
 
          </children>
       </AnchorPane>

@@ -50,7 +50,7 @@
             <Font size="20.0" />
          </font></TextArea>
       <Button id="big-yellow" fx:id="backButton" layoutX="14.0" layoutY="411.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="58.0" prefWidth="193.0" stylesheets="@../cssfiles/buttons.css" text="BananoMenu" />
-      <ImageView fx:id="Shybanana" fitHeight="150.0" fitWidth="200.0" layoutX="585.0" layoutY="289.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Shybanana" fitHeight="150.0" fitWidth="200.0" layoutX="585.0" layoutY="263.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/walkingbanana.gif" />
          </image>
