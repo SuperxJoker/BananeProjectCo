@@ -24,10 +24,11 @@
             </ImageView>
 
             <Button fx:id="bananaPi" layoutX="224.0" layoutY="172.0" mnemonicParsing="false" onAction="#bananaPiButtonOnAction" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: #F2D8B4;" text="BananaPi" />
-            <Button fx:id="bananaPrim" layoutX="480.0" layoutY="205.0" mnemonicParsing="false" onAction="#bananaPrimButtonOnAction" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: #F2D8B4;" text="BananaPrim" />
+            <Button fx:id="bananaPrim" layoutX="476.0" layoutY="170.0" mnemonicParsing="false" onAction="#bananaPrimButtonOnAction" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: #F2D8B4;" text="BananaPrim" />
             <Button fx:id="fibbobanana" layoutX="224.0" layoutY="255.0" mnemonicParsing="false" onAction="#fibbobananaButtonOnAction" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: #F2D8B4;" text="FIbbobanana" />
             <Label layoutX="216.0" layoutY="99.0" text="THE BOOK OF DOOM! BE WARE!" textFill="#fc0000" />
             <Label layoutX="473.0" layoutY="99.0" text="Overusing it may fry your CPU!!" textFill="RED" />
+            <Button fx:id="BananaEuler" layoutX="476.0" layoutY="253.0" mnemonicParsing="false" onAction="#bananaEulerButtonOnAction" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: #F2D8B4;" text="BananaEuler" />
 
          </children>
       </AnchorPane>

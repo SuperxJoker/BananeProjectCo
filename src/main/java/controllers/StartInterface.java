@@ -50,6 +50,16 @@ public class StartInterface implements Initializable {
         fibbostage.setScene(new Scene(root2,818,484));
         fibbostage.show();
     }
+
+    public void bananaEulerButtonOnAction(ActionEvent event) throws IOException {
+        Parent root3 = FXMLLoader.load(getClass().getResource("eulerController.fxml"));
+        Stage eulerstage = new Stage();
+        eulerstage.getIcons().add(new Image(("/images/icon.png")));
+        eulerstage.setTitle("Bananas in pyjamas");
+        eulerstage.setScene(new Scene(root3,818,484));
+        eulerstage.show();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

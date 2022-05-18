@@ -33,11 +33,13 @@ public class UI1 implements Initializable {
 
         stage.show();
     }
+
     @FXML
     public void handleCloseButtonAction(ActionEvent event) {
-        Stage stage = (Stage) next1.getScene().getWindow();
+        Stage stage = (Stage)this.next1.getScene().getWindow();
         stage.close();
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
