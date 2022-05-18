@@ -7,5 +7,5 @@ contains 4 algorithms.
 
 2. Digits of Euler : prints the digits of the Euler number which corresponds the number of digits that the user introduces.
 
-3. Fibonacci: 
+3. Fibonacci: considering N to be the number introduced by the user, the algorithm prints the Nth numbers from the Fibonacci series.
 4. Prime number: prints the closest prime number to the one introduced by the user.
