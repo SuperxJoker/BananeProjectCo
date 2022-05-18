@@ -1,5 +1,6 @@
 package controllers;
 
+import bench.cpu.MyThread;
 import bench.cpu.eulerDigits;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
@@ -54,12 +55,15 @@ public class EulerController {
 
         int n=Integer.parseInt(String.valueOf(eulerTextField.getText()));
         eulerDigits euler = new eulerDigits();
+        MyThread mt = new MyThread("eulerDigits",euler,n);
 
         Timer t = new Timer();
         t.start();
-        euler.EulerCalc(n);
+        mt.start();//euler.EulerCalc(n);
         timeTaken=t.stop();
         time = TimeUnit.toTimeUnit(timeTaken,TimeUnit.Milli);
+
+        euler = (eulerDigits) mt.getBenchClass();
 
         String scoreString = String.format("%.0f",n/Math.sqrt(time));
 

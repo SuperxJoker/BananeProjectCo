@@ -89,17 +89,18 @@ public class TestController {
 
         // DigitsOfPiSpigot thread = new DigitsOfPiSpigot();
         //thread.start();
-        MyThread mt = new MyThread();
-        mt.start();
+        MyThread mt = new MyThread("DigitsOfPiSpigot",d,k);
         Timer t = new Timer();
         t.start();
-        d.Digits(k);
+        mt.start();//d.Digits(k);
         timetaken=t.stop();
         newtime = TimeUnit.toTimeUnit(timetaken,TimeUnit.Milli);
 
         timeName.setVisible(true);
 
         timeLabel.setText(String.valueOf(newtime));
+
+        d=(DigitsOfPiSpigot)mt.getBenchClass();
 
 
         String scoreString = String.format("%.0f",k/Math.sqrt(newtime));
