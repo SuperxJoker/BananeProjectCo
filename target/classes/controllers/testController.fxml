@@ -4,11 +4,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="484.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TestController">
    <children>
+      <ImageView fitHeight="484.0" fitWidth="818.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Images/bananaz.jpg" />
+         </image>
+      </ImageView>
       <TextField fx:id="digitsField" layoutX="45.0" layoutY="87.0" prefHeight="65.0" prefWidth="226.0" promptText="Add number of digits" />
       <Button fx:id="startButton" layoutX="45.0" layoutY="172.0" mnemonicParsing="false" onAction="#startButtonOnAction" prefHeight="65.0" prefWidth="226.0" text="Start">
          <font>
@@ -43,5 +50,10 @@
             <Font size="20.0" />
          </font></TextArea>
       <Button id="big-yellow" fx:id="backButton" layoutX="14.0" layoutY="411.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="58.0" prefWidth="193.0" stylesheets="@../cssfiles/buttons.css" text="BananoMenu" />
+      <ImageView fx:id="Shybanana" fitHeight="150.0" fitWidth="200.0" layoutX="585.0" layoutY="289.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/walkingbanana.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

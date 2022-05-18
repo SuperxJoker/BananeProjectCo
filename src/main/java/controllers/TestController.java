@@ -2,6 +2,8 @@ package controllers;
 
 import bench.IBenchmark;
 import bench.cpu.*;
+import javafx.animation.RotateTransition;
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,7 +16,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import logging.ConsoleLogger;
 import logging.ILog;
 import logging.TimeUnit;
@@ -50,6 +54,8 @@ public class TestController {
     private Button backButton;
     @FXML
     private TextArea piArea;
+    @FXML
+    private ImageView Shybanana;
 
     public int k;
     private long timetaken;
@@ -60,6 +66,15 @@ public class TestController {
     public void initialize(){
         timeName.setVisible(false);
         scoreName.setVisible(false);
+
+        TranslateTransition translate = new TranslateTransition();
+        translate.setNode(Shybanana);
+        translate.setDuration(Duration.millis(1000));
+        translate.setCycleCount(TranslateTransition.INDEFINITE);
+        translate.setByX(-200);
+        translate.setAutoReverse(true);
+        translate.play();
+
     }
 
     public TestController() {

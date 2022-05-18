@@ -1,6 +1,7 @@
 package controllers;
 
 import bench.cpu.generateSieveOfEratosthenes;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +14,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import logging.TimeUnit;
 import timming.Timer;
 
@@ -41,10 +44,19 @@ public class PrimController  {
     private TextArea primeArea;
     @FXML
     private Button backButton;
-
+    @FXML
+    private ImageView Drummerbanana;
     public void initialize(){
         timeName.setVisible(false);
         scoreName.setVisible(false);
+
+        TranslateTransition translate = new TranslateTransition();
+        translate.setNode(Drummerbanana);
+        translate.setDuration(Duration.millis(1000));
+        translate.setCycleCount(TranslateTransition.INDEFINITE);
+        translate.setByX(240);
+        translate.setAutoReverse(true);
+        translate.play();
     }
 
 

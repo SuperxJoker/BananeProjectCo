@@ -1,6 +1,7 @@
 package controllers;
 
 import bench.cpu.eulerDigits;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +12,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import logging.TimeUnit;
 import timming.Timer;
 
@@ -29,10 +32,19 @@ public class EulerController {
     private Label eulerTimeLabel;
     @FXML
     private Label eulerScoreLabel;
-
+    @FXML
+    private ImageView thedancingbanana;
     public void initialize(){
         eulerTimeLabel.setVisible(false);
         eulerScoreLabel.setVisible(false);
+
+        TranslateTransition translate = new TranslateTransition();
+        translate.setNode(thedancingbanana);
+        translate.setDuration(Duration.millis(1000));
+        translate.setCycleCount(TranslateTransition.INDEFINITE);
+        translate.setByY(-350);
+        translate.setAutoReverse(true);
+        translate.play();
     }
 
     public void eulerButtonOnAction(ActionEvent event)
