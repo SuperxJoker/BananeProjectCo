@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="484.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LastStage">
+   <children>
+      <ImageView fitHeight="484.0" fitWidth="818.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Images/thats-all-folks-end.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="240.0" fitWidth="168.0" layoutX="14.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/alexia.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="234.0" fitWidth="161.0" layoutX="181.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/vlad.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="234.0" fitWidth="161.0" layoutX="337.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/xandy.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="234.0" fitWidth="161.0" layoutX="505.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/radu.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="234.0" fitWidth="156.0" layoutX="662.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/edi.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

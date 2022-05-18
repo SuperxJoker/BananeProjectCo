@@ -21,7 +21,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="29.0" layoutY="240.0" text="Time (in milliseconds)">
+      <Label fx:id="timeText" layoutX="29.0" layoutY="240.0" text="Time (in milliseconds)">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -36,7 +36,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="326.0" text="Score">
+      <Label fx:id="scoreText" layoutX="26.0" layoutY="326.0" text="Score">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
