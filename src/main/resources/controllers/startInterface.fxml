@@ -30,7 +30,7 @@
                         <Image url="@../Images/trial by fire.gif" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="48.0" fitWidth="46.0" layoutX="479.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Dreamteam" fitHeight="48.0" fitWidth="46.0" layoutX="479.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/dream-dream-team-unscreen.gif" />
                      </image>

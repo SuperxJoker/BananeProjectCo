@@ -15,53 +15,63 @@
          <children>
             <AnchorPane layoutX="140.0" prefHeight="495.0" prefWidth="607.0">
                <children>
-                  <ImageView fitHeight="491.0" fitWidth="818.0" layoutX="-198.0" layoutY="4.0">
+                  <ImageView fitHeight="491.0" fitWidth="818.0" layoutX="-197.0" layoutY="6.0">
                      <image>
                         <Image url="@../Images/nether back.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="378.0" fitWidth="517.0" layoutX="51.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="378.0" fitWidth="517.0" layoutX="2.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/bookofdoom.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="317.0" fitWidth="503.0" layoutX="62.0" layoutY="93.0" opacity="0.35" pickOnBounds="true">
+                  <ImageView fitHeight="317.0" fitWidth="503.0" layoutX="13.0" layoutY="75.0" opacity="0.35" pickOnBounds="true">
                      <image>
                         <Image url="@../Images/trial by fire.gif" />
                      </image>
                   </ImageView>
-                  <Label layoutX="84.0" layoutY="115.0" text="THE BOOK OF DOOM! BE WARE!" textFill="#5b4965">
+                  <ImageView fx:id="Dreamteam" fitHeight="48.0" fitWidth="46.0" layoutX="479.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/dream-dream-team-unscreen.gif" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="48.0" layoutY="96.0" text="THE BOOK OF DOOM! BE WARE!" textFill="#5b4965">
                      <font>
                         <Font name="Comic Sans MS Bold Italic" size="12.0" />
                      </font>
                   </Label>
-                  <Label layoutX="326.0" layoutY="115.0" prefHeight="18.0" prefWidth="242.0" text="OVERUSING IT MAY FRY YOUR CPU!!" textFill="#5b4965">
+                  <Label layoutX="281.0" layoutY="96.0" prefHeight="18.0" prefWidth="228.0" text="OVERUSING IT MAY FRY YOUR CPU!!" textFill="#5b4965">
                      <font>
                         <Font name="Comic Sans MS Bold Italic" size="12.0" />
                      </font>
                   </Label>
-                  <Button fx:id="bananaPrim" layoutX="367.0" layoutY="178.0" mnemonicParsing="false" onAction="#switchToScene8" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: transparent; -fx-border-color: #5b4965; -fx-border-width: 6;" text="BananaPrim">
+                  <Button fx:id="bananaPrim" layoutX="315.0" layoutY="189.0" mnemonicParsing="false" onAction="#switchToScene8" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: transparent; -fx-border-radius: 25; -fx-border-color: #5b4965; -fx-border-width: 6;" text="BananaPrim">
                      <font>
-                        <Font name="Comic Sans MS Bold" size="12.0" />
+                        <Font name="Comic Sans MS Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="BananaEuler" layoutX="367.0" layoutY="271.0" mnemonicParsing="false" onAction="#switchToScene7" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: #F2D8B4;" text="BananaEuler">
+                  <Button fx:id="BananaEuler" layoutX="315.0" layoutY="271.0" mnemonicParsing="false" onAction="#switchToScene7" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: transparent; -fx-border-color: #5b4965; -fx-border-radius: 25; -fx-border-width: 6;" text="BananaEuler">
                      <font>
-                        <Font name="Comic Sans MS Bold" size="12.0" />
+                        <Font name="Comic Sans MS Bold" size="15.0" />
                      </font>
                   </Button>
       
-                  <Button fx:id="bananaPi" layoutX="104.0" layoutY="180.0" mnemonicParsing="false" onAction="#switchToScene5" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: #5b4965; -fx-border-width: 6; -fx-border-radius: 6;" text="BananaPi">
+                  <Button fx:id="bananaPi" layoutX="48.0" layoutY="191.0" mnemonicParsing="false" onAction="#switchToScene5" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: #5b4965; -fx-border-width: 6; -fx-border-radius: 1000;" text="BananaPi">
                      <font>
                         <Font name="Comic Sans MS Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="fibbobanana" layoutX="104.0" layoutY="272.0" mnemonicParsing="false" onAction="#switchToScene6" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: #5b4965; -fx-border-radius: 6; -fx-border-width: 6;" text="Fibbobanana">
+                  <Button fx:id="fibbobanana" layoutX="48.0" layoutY="275.0" mnemonicParsing="false" onAction="#switchToScene6" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: #5b4965; -fx-border-radius: 25; -fx-border-width: 6;" text="Fibbobanana">
                      <font>
                         <Font name="Comic Sans MS Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button id="big-yellow" fx:id="backButton" layoutX="220.0" layoutY="422.0" mnemonicParsing="false" onAction="#switchToScene9" prefHeight="58.0" prefWidth="178.0" stylesheets="@../cssfiles/buttons.css" text="EXIT NETHER" textFill="#5b4965" />
+                  <Button id="nether" fx:id="backButton" layoutX="171.0" layoutY="425.0" mnemonicParsing="false" onAction="#switchToScene9" prefHeight="58.0" prefWidth="178.0" stylesheets="@../cssfiles/buttons.css" text="EXIT NETHER" textFill="#5b4965" />
+                  <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="78.0" layoutY="425.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/nether-portal-amogus.gif" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
             <ImageView fitHeight="494.0" fitWidth="224.0" layoutX="-66.0" layoutY="1.0">
