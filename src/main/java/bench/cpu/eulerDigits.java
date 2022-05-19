@@ -1,4 +1,5 @@
 package bench.cpu;
+import java.lang.StringBuilder;
 
 public class eulerDigits {
     private int[] digits;
