@@ -6,30 +6,79 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StageController">
  <right>
-      <AnchorPane prefHeight="397.0" prefWidth="734.0" style="-fx-background-color: ffe7ab;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="482.0" prefWidth="738.0" style="-fx-background-color: ffe7ab;" BorderPane.alignment="CENTER">
 
          <children>
-            <ImageView fitHeight="484.0" fitWidth="225.0" layoutX="-83.0">
+            <AnchorPane layoutX="140.0" prefHeight="495.0" prefWidth="607.0">
+               <children>
+                  <ImageView fitHeight="491.0" fitWidth="818.0" layoutX="-197.0" layoutY="6.0">
+                     <image>
+                        <Image url="@../Images/nether back.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="378.0" fitWidth="517.0" layoutX="2.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/bookofdoom.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="317.0" fitWidth="503.0" layoutX="13.0" layoutY="75.0" opacity="0.35" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Images/trial by fire.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="48.0" fitWidth="46.0" layoutX="479.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/dream-dream-team-unscreen.gif" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="48.0" layoutY="96.0" text="THE BOOK OF DOOM! BE WARE!" textFill="#5b4965">
+                     <font>
+                        <Font name="Comic Sans MS Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="281.0" layoutY="96.0" prefHeight="18.0" prefWidth="228.0" text="OVERUSING IT MAY FRY YOUR CPU!!" textFill="#5b4965">
+                     <font>
+                        <Font name="Comic Sans MS Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="bananaPrim" layoutX="315.0" layoutY="189.0" mnemonicParsing="false" onAction="#switchToScene8" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: transparent; -fx-border-radius: 25; -fx-border-color: #5b4965; -fx-border-width: 6;" text="BananaPrim">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="BananaEuler" layoutX="315.0" layoutY="271.0" mnemonicParsing="false" onAction="#switchToScene7" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: transparent; -fx-border-color: #5b4965; -fx-border-radius: 25; -fx-border-width: 6;" text="BananaEuler">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="15.0" />
+                     </font>
+                  </Button>
+      
+                  <Button fx:id="bananaPi" layoutX="48.0" layoutY="191.0" mnemonicParsing="false" onAction="#switchToScene5" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: #5b4965; -fx-border-width: 6; -fx-border-radius: 1000;" text="BananaPi">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="fibbobanana" layoutX="48.0" layoutY="275.0" mnemonicParsing="false" onAction="#switchToScene6" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: #5b4965; -fx-border-radius: 25; -fx-border-width: 6;" text="Fibbobanana">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button id="nether" fx:id="backButton" layoutX="171.0" layoutY="425.0" mnemonicParsing="false" onAction="#switchToScene9" prefHeight="58.0" prefWidth="178.0" stylesheets="@../cssfiles/buttons.css" text="EXIT NETHER" textFill="#5b4965" />
+                  <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="78.0" layoutY="425.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/nether-portal-amogus.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="494.0" fitWidth="224.0" layoutX="-66.0" layoutY="1.0">
                <image>
-                  <Image url="@../Images/thiningbabane.jpg.png" />
+                  <Image url="@../Images/thiningbabane.jpg-removebg-preview.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="398.0" fitWidth="539.0" layoutX="154.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/book1ofdoom.png" />
-               </image>
-            </ImageView>
-
-            <Button fx:id="bananaPi" layoutX="224.0" layoutY="172.0" mnemonicParsing="false" onAction="#switchToScene5" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: #F2D8B4;" text="BananaPi" />
-            <Button fx:id="bananaPrim" layoutX="476.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchToScene8" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: #F2D8B4;" text="BananaPrim" />
-            <Button fx:id="fibbobanana" layoutX="224.0" layoutY="255.0" mnemonicParsing="false" onAction="#switchToScene6" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: #F2D8B4;" text="FIbbobanana" />
-            <Label layoutX="216.0" layoutY="99.0" text="THE BOOK OF DOOM! BE WARE!" textFill="#fc0000" />
-            <Label layoutX="473.0" layoutY="99.0" text="Overusing it may fry your CPU!!" textFill="RED" />
-            <Button fx:id="BananaEuler" layoutX="476.0" layoutY="253.0" mnemonicParsing="false" onAction="#switchToScene7" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: #F2D8B4;" text="BananaEuler" />
-            <Button id="big-yellow" fx:id="backButton" layoutX="526.0" layoutY="411.0" mnemonicParsing="false" onAction="#switchToScene9" prefHeight="58.0" prefWidth="193.0" stylesheets="@../cssfiles/buttons.css" text="Continue" />
 
          </children>
       </AnchorPane>
