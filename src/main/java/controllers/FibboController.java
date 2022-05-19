@@ -60,7 +60,7 @@ public class FibboController {
         timeTaken=t.stop();
         time = TimeUnit.toTimeUnit(timeTaken,TimeUnit.Milli);
 
-        String scoreString = String.format("%.0f",n/Math.sqrt(time));
+        String scoreString = String.format("%.0f",Math.sqrt(n*100)/Math.log(time));
 
         fibboArea.setText(fibbo.fNumber);
         timeName.setVisible(true);
