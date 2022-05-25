@@ -2,38 +2,31 @@ package controllers;
 
 import Exceptions.EnterAValidNumber;
 import Services.IncorrectInput;
-import bench.IBenchmark;
-import bench.cpu.*;
-import javafx.animation.RotateTransition;
+import bench.cpu.DigitsOfPiSpigot;
+import bench.cpu.MyThread;
 import javafx.animation.TranslateTransition;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import logging.ConsoleLogger;
-import logging.ILog;
 import logging.TimeUnit;
-import org.w3c.dom.Text;
-import timming.ITimer;
+import oshi.SystemInfo;
+import oshi.hardware.CentralProcessor;
+import oshi.hardware.HardwareAbstractionLayer;
 import timming.Timer;
 
 import java.io.IOException;
-import java.net.URL;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+
+import static Services.LocalBase.addToJson;
 
 public class TestController {
     private Stage stage;
@@ -66,6 +59,7 @@ public class TestController {
     public double newtime;
     public double score;
     public double newtime2;
+
 
     public void initialize(){
         timeName.setVisible(false);
@@ -122,6 +116,21 @@ public class TestController {
             displayScore.setVisible(true);
             displayScore.setText(String.valueOf(scoreString));
             piArea.setText(d.toDisplay);
+
+
+            SystemInfo systemInfo = new SystemInfo();
+            HardwareAbstractionLayer hardware = systemInfo.getHardware();
+            CentralProcessor processor = hardware.getProcessor();
+            CentralProcessor.ProcessorIdentifier processorIdentifier = processor.getProcessorIdentifier();
+           // System.out.println("Processor Name: " + processorIdentifier.getName());
+
+
+            addToJson(processorIdentifier.getName(), "Digits of PI",String.valueOf(newtime),scoreString);
+
+
+
+
+
         }catch (EnterAValidNumber e)
         {
             timeName.setVisible(false);
@@ -132,6 +141,7 @@ public class TestController {
         }
     }
 
+
     public void backButtonOnAction(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("startInterface.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -139,6 +149,9 @@ public class TestController {
         stage.setScene(scene);
         stage.show();
     }
+
+
+
 }
 
 

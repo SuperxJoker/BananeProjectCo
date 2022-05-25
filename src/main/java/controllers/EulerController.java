@@ -19,10 +19,15 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import logging.TimeUnit;
+import oshi.SystemInfo;
+import oshi.hardware.CentralProcessor;
+import oshi.hardware.HardwareAbstractionLayer;
 import timming.Timer;
 
 import java.io.IOException;
 import java.util.Objects;
+
+import static Services.LocalBase.addToJson;
 
 public class EulerController {
     private Stage stage;
@@ -93,6 +98,15 @@ public class EulerController {
             eulerTimeLabel.setText(String.valueOf(time));
             eulerTextArea.setText(euler.toDisplay);
             eulerScoreLabel.setText(scoreString);
+
+            SystemInfo systemInfo = new SystemInfo();
+            HardwareAbstractionLayer hardware = systemInfo.getHardware();
+            CentralProcessor processor = hardware.getProcessor();
+            CentralProcessor.ProcessorIdentifier processorIdentifier = processor.getProcessorIdentifier();
+            // System.out.println("Processor Name: " + processorIdentifier.getName());
+
+
+            addToJson(processorIdentifier.getName(), "Digits of PI",String.valueOf(time),scoreString);
 
         }catch (EnterAValidNumber e)
         {

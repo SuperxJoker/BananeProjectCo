@@ -2,6 +2,7 @@ controllers\Main.class
 controllers\Launcher.class
 bench\cpu\MyThread.class
 timming\ITimer.class
+Services\LocalBase.class
 controllers\UI1.class
 timming\Timer.class
 controllers\LastStage.class

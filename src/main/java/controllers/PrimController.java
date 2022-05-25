@@ -21,12 +21,17 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import logging.TimeUnit;
+import oshi.SystemInfo;
+import oshi.hardware.CentralProcessor;
+import oshi.hardware.HardwareAbstractionLayer;
 import timming.Timer;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
+
+import static Services.LocalBase.addToJson;
 
 public class PrimController  {
     private Stage stage;
@@ -113,6 +118,16 @@ public class PrimController  {
             timeLabel.setText(String.valueOf(time1));
             displayScore.setText(String.valueOf(scoreString));
             primeArea.setText(String.valueOf(test.getPrim()));
+
+            SystemInfo systemInfo = new SystemInfo();
+            HardwareAbstractionLayer hardware = systemInfo.getHardware();
+            CentralProcessor processor = hardware.getProcessor();
+            CentralProcessor.ProcessorIdentifier processorIdentifier = processor.getProcessorIdentifier();
+            // System.out.println("Processor Name: " + processorIdentifier.getName());
+
+
+            addToJson(processorIdentifier.getName(), "Digits of PI",String.valueOf(time1),scoreString);
+
             // System.out.println(count);
         }catch(EnterAValidNumber e)
         {

@@ -16,10 +16,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import logging.TimeUnit;
+import oshi.SystemInfo;
+import oshi.hardware.CentralProcessor;
+import oshi.hardware.HardwareAbstractionLayer;
 import timming.Timer;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.Objects;
+
+import static Services.LocalBase.addToJson;
 
 public class FibboController {
     private Stage stage;
@@ -80,6 +85,16 @@ public class FibboController {
             fibboTimeLabel.setText(String.valueOf(time));
             scoreName.setVisible(true);
             scoreDisplay.setText(String.valueOf(scoreString));
+
+            SystemInfo systemInfo = new SystemInfo();
+            HardwareAbstractionLayer hardware = systemInfo.getHardware();
+            CentralProcessor processor = hardware.getProcessor();
+            CentralProcessor.ProcessorIdentifier processorIdentifier = processor.getProcessorIdentifier();
+            // System.out.println("Processor Name: " + processorIdentifier.getName());
+
+
+            addToJson(processorIdentifier.getName(), "Digits of PI",String.valueOf(time),scoreString);
+
         }catch (EnterAValidNumber e)
         {
             fibboTimeLabel.setVisible(false);
