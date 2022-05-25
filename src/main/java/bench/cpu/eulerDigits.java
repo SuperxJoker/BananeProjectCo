@@ -1,4 +1,6 @@
 package bench.cpu;
+import java.lang.StringBuilder;
+import java.util.Arrays;
 
 public class eulerDigits {
     private int[] digits;
@@ -15,8 +17,7 @@ public class eulerDigits {
             return false;
         }
 
-        for (int i=0; i < digits.length; i++)
-            digits[i] = 1;
+        Arrays.fill(digits, 1);
 
         return true;
     }

@@ -1,5 +1,7 @@
 package controllers;
 
+import Exceptions.EnterAValidNumber;
+import Services.IncorrectInput;
 import bench.cpu.MyThread;
 import bench.cpu.eulerDigits;
 import javafx.animation.TranslateTransition;
@@ -20,6 +22,7 @@ import logging.TimeUnit;
 import timming.Timer;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class EulerController {
     private Stage stage;
@@ -39,6 +42,8 @@ public class EulerController {
     private Label timeText;
     @FXML
     private Label scoreText;
+    @FXML
+    private Label eulerException = new Label();
 
     public void initialize(){
         eulerTimeLabel.setVisible(false);
@@ -55,41 +60,52 @@ public class EulerController {
         translate.play();
     }
 
-    public void eulerButtonOnAction(ActionEvent event)
-    {
+    public void eulerButtonOnAction(ActionEvent event) throws EnterAValidNumber {
         eulerDigits warmup = new eulerDigits();
         warmup.EulerCalc(6000);
 
         long timeTaken;
         double time;
+        eulerException.setText("");
+        try{
+            IncorrectInput incorrectInput = new IncorrectInput();
+            incorrectInput.getCorrectNumber(eulerTextField.getText().matches("[0-9]+"));
+            incorrectInput.checkIncorrect();
 
-        int n=Integer.parseInt(String.valueOf(eulerTextField.getText()));
-        eulerDigits euler = new eulerDigits();
-        MyThread mt = new MyThread("eulerDigits",euler,n);
+            int n=Integer.parseInt(String.valueOf(eulerTextField.getText()));
+            eulerDigits euler = new eulerDigits();
+            MyThread mt = new MyThread("eulerDigits",euler,n);
 
-        Timer t = new Timer();
-        t.start();
-        mt.start();//euler.EulerCalc(n);
-        timeTaken=t.stop();
-        time = TimeUnit.toTimeUnit(timeTaken,TimeUnit.Milli);
+            Timer t = new Timer();
+            t.start();
+            mt.start();//euler.EulerCalc(n);
+            timeTaken=t.stop();
+            time = TimeUnit.toTimeUnit(timeTaken,TimeUnit.Milli);
 
-        euler = (eulerDigits) mt.getBenchClass();
+            euler = (eulerDigits) mt.getBenchClass();
 
-        String scoreString = String.format("%.0f",n/Math.sqrt(time));
+            String scoreString = String.format("%.0f",n/Math.sqrt(time));
 
-        eulerTimeLabel.setVisible(true);
-        eulerScoreLabel.setVisible(true);
-        timeText.setVisible(true);
-        scoreText.setVisible(true);
-        eulerTimeLabel.setText(String.valueOf(time));
-        eulerTextArea.setText(euler.toDisplay);
-        eulerScoreLabel.setText(scoreString);
+            eulerTimeLabel.setVisible(true);
+            eulerScoreLabel.setVisible(true);
+            timeText.setVisible(true);
+            scoreText.setVisible(true);
+            eulerTimeLabel.setText(String.valueOf(time));
+            eulerTextArea.setText(euler.toDisplay);
+            eulerScoreLabel.setText(scoreString);
 
-
+        }catch (EnterAValidNumber e)
+        {
+            eulerTimeLabel.setVisible(false);
+            eulerScoreLabel.setVisible(false);
+            timeText.setVisible(false);
+            scoreText.setVisible(false);
+            eulerException.setText(e.getMessage());
+        }catch (Exception ignored){}
     }
 
     public void backButtonOnAction(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("startinterface.fxml"));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("startInterface.fxml")));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

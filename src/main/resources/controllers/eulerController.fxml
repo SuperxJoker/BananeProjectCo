@@ -16,7 +16,7 @@
             <Image url="@../Images/bananaz.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="getEulerNumber" layoutX="27.0" layoutY="116.0" mnemonicParsing="false" onAction="#eulerButtonOnAction" prefHeight="69.0" prefWidth="174.0" text="Calculate">
+      <Button fx:id="getEulerNumber" layoutX="28.0" layoutY="175.0" mnemonicParsing="false" onAction="#eulerButtonOnAction" prefHeight="46.0" prefWidth="215.0" text="Calculate">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -26,7 +26,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="25.0" text="Number of digits:">
+      <Label layoutX="28.0" layoutY="25.0" text="Number of digits:">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -46,21 +46,28 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="240.0" layoutY="25.0" text="Euler's number:">
+      <Label layoutX="300.0" layoutY="25.0" text="Euler's number:">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TextArea fx:id="eulerTextArea" layoutX="240.0" layoutY="70.0" prefHeight="253.0" prefWidth="421.0">
+      <TextArea fx:id="eulerTextArea" layoutX="300.0" layoutY="71.0" prefHeight="253.0" prefWidth="421.0">
          <font>
             <Font size="20.0" />
          </font></TextArea>
-      <TextField fx:id="eulerTextField" layoutX="28.0" layoutY="70.0" prefHeight="26.0" prefWidth="174.0" />
+      <TextField fx:id="eulerTextField" layoutX="28.0" layoutY="70.0" prefHeight="37.0" prefWidth="215.0" promptText="Positive Integer">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
       <Button id="big-yellow" fx:id="backButton" layoutX="7.0" layoutY="416.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="58.0" prefWidth="193.0" stylesheets="@../cssfiles/buttons.css" text="BananoMenu" />
       <ImageView fx:id="thedancingbanana" fitHeight="150.0" fitWidth="150.0" layoutX="668.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/dancingbanana.gif" />
          </image>
       </ImageView>
+      <Label fx:id="eulerException" layoutX="27.0" layoutY="102.0" prefHeight="46.0" prefWidth="225.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
    </children>
 </AnchorPane>

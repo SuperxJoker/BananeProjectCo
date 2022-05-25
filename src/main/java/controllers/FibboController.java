@@ -1,5 +1,7 @@
 package controllers;
 
+import Exceptions.EnterAValidNumber;
+import Services.IncorrectInput;
 import bench.cpu.MyThread;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +19,7 @@ import logging.TimeUnit;
 import timming.Timer;
 import java.io.IOException;
 import java.math.BigInteger;
+import java.util.Objects;
 
 public class FibboController {
     private Stage stage;
@@ -36,6 +39,8 @@ public class FibboController {
     private Label scoreDisplay;
     @FXML
     private Label timeName;
+    @FXML
+    private Label fibboException;
 
     public void initialize(){
         timeName.setVisible(false);
@@ -49,29 +54,44 @@ public class FibboController {
 
         FibboController warmup = new FibboController();
         warmup.Fibbo(100000);
+        scoreDisplay.setVisible(true);
+        fibboException.setText("");
+        try {
+            IncorrectInput incorrectInput = new IncorrectInput();
+            incorrectInput.getCorrectNumber(fibboTextField.getText().matches("[0-9]+"));
+            incorrectInput.checkIncorrect();
 
-        int n=Integer.parseInt(String.valueOf(fibboTextField.getText()));
-        FibboController fibbo= new FibboController();
-        MyThread mt = new MyThread("FibboController",fibbo,n);
+            int n = Integer.parseInt(String.valueOf(fibboTextField.getText()));
+            FibboController fibbo = new FibboController();
+            MyThread mt = new MyThread("FibboController", fibbo, n);
 
-        Timer t = new Timer();
-        t.start();
-        mt.start();//Fibbo(n); <=> fibbo.Fibbo(n);
-        timeTaken=t.stop();
-        time = TimeUnit.toTimeUnit(timeTaken,TimeUnit.Milli);
+            Timer t = new Timer();
+            t.start();
+            mt.start();//Fibbo(n); <=> fibbo.Fibbo(n);
+            timeTaken = t.stop();
+            time = TimeUnit.toTimeUnit(timeTaken, TimeUnit.Milli);
 
-        String scoreString = String.format("%.0f",Math.sqrt(n*100)/Math.log(time));
+            String scoreString = String.format("%.0f", Math.sqrt(n * 100) / Math.log(time));
 
-        fibboArea.setText(fibbo.fNumber);
-        timeName.setVisible(true);
-        fibboTimeLabel.setText(String.valueOf(time));
-        scoreName.setVisible(true);
-        scoreDisplay.setText(String.valueOf(scoreString));
-
+            fibboArea.setText(fibbo.fNumber);
+            timeName.setVisible(true);
+            fibboTimeLabel.setVisible(true);
+            scoreDisplay.setVisible(true);
+            fibboTimeLabel.setText(String.valueOf(time));
+            scoreName.setVisible(true);
+            scoreDisplay.setText(String.valueOf(scoreString));
+        }catch (EnterAValidNumber e)
+        {
+            fibboTimeLabel.setVisible(false);
+            scoreName.setVisible(false);
+            scoreDisplay.setVisible(false);
+            timeName.setVisible(false);
+            fibboException.setText(e.getMessage());
+        }
     }
 
     public void backButtonOnAction(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("startinterface.fxml"));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("startInterface.fxml")));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

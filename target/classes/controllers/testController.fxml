@@ -16,8 +16,11 @@
             <Image url="@../Images/bananaz.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="digitsField" layoutX="45.0" layoutY="87.0" prefHeight="65.0" prefWidth="226.0" promptText="Add number of digits" />
-      <Button fx:id="startButton" layoutX="45.0" layoutY="172.0" mnemonicParsing="false" onAction="#startButtonOnAction" prefHeight="65.0" prefWidth="226.0" text="Start">
+      <TextField fx:id="digitsField" layoutX="45.0" layoutY="87.0" prefHeight="39.0" prefWidth="242.0" promptText="Add number of digits">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <Button fx:id="startButton" layoutX="45.0" layoutY="188.0" mnemonicParsing="false" onAction="#startButtonOnAction" prefHeight="50.0" prefWidth="242.0" text="Start">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
@@ -55,5 +58,10 @@
             <Image url="@../Images/walkingbanana.gif" />
          </image>
       </ImageView>
+      <Label fx:id="piException" layoutX="45.0" layoutY="132.0" prefHeight="50.0" prefWidth="242.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

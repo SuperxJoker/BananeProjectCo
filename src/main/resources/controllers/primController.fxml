@@ -19,7 +19,7 @@
                   <Image url="@../Images/bananaz.jpg" />
                </image>
             </ImageView>
-            <TextField fx:id="digitsField" layoutX="45.0" layoutY="87.0" prefHeight="65.0" prefWidth="226.0" promptText="Enter max range">
+            <TextField fx:id="digitsField" layoutX="45.0" layoutY="87.0" prefHeight="48.0" prefWidth="251.0" promptText="Enter max range">
                <font>
                   <Font size="16.0" />
                </font></TextField>
@@ -31,7 +31,7 @@
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Label>
-            <Button fx:id="startButton" layoutX="45.0" layoutY="172.0" mnemonicParsing="false" onAction="#startButtonOnAction" prefHeight="65.0" prefWidth="226.0" text="Start">
+            <Button fx:id="startButton" layoutX="45.0" layoutY="203.0" mnemonicParsing="false" onAction="#startButtonOnAction" prefHeight="35.0" prefWidth="244.0" text="Start">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Button>
@@ -46,6 +46,11 @@
                </font>
             </Label>
             <Button id="big-yellow" fx:id="backButton" layoutX="10.0" layoutY="410.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="58.0" prefWidth="193.0" stylesheets="@../cssfiles/buttons.css" text="BananoMenu" />
+            <Label fx:id="primException" layoutX="45.0" layoutY="142.0" prefHeight="51.0" prefWidth="249.0" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </left>
