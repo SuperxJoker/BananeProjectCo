@@ -15,11 +15,15 @@ import javafx.stage.StageStyle;
 public class Main extends Application {
 
 
+    public static void main(String[] args) {
+        launch();
+    }
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("no1.fxml"));
-        stage.getIcons().add(new Image(("/images/icon.png")));
-       // stage.initStyle(StageStyle.UNDECORATED);
+       //stage.getIcons().add(new Image(getClass().getResource("/images/icon.png").toURI().toString()));
+        //.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Bananas in pyjamas ");
         stage.setScene(new Scene(root, 818, 484));
         stage.show();
