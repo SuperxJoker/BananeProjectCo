@@ -1,5 +1,7 @@
 package controllers;
 
+import Exceptions.EnterAValidNumber;
+import Services.IncorrectInput;
 import bench.IBenchmark;
 import bench.cpu.*;
 import javafx.animation.RotateTransition;
@@ -56,6 +58,8 @@ public class TestController {
     private TextArea piArea;
     @FXML
     private ImageView Shybanana;
+    @FXML
+    private Label piException;
 
     public int k;
     private long timetaken;
@@ -88,46 +92,53 @@ public class TestController {
         double newtime = 0;
 
         DigitsOfPiSpigot d = new DigitsOfPiSpigot();
-        k=Integer.parseInt(String.valueOf(digitsField.getText()));
 
-        // DigitsOfPiSpigot thread = new DigitsOfPiSpigot();
-        //thread.start();
+        piException.setText("");
+        try {
+            IncorrectInput incorrectInput = new IncorrectInput();
+            incorrectInput.getCorrectNumber(digitsField.getText().matches("[0-9]+"));
+            incorrectInput.checkIncorrect();
 
+            k = Integer.parseInt(String.valueOf(digitsField.getText()));
 
-        MyThread mt = new MyThread("DigitsOfPiSpigot",d,k);
-        Timer t = new Timer();
-        t.start();
-        mt.start();//d.Digits(k);
-        timetaken=t.stop();
-        newtime = TimeUnit.toTimeUnit(timetaken,TimeUnit.Milli);
+            // DigitsOfPiSpigot thread = new DigitsOfPiSpigot();
+            //thread.start();
 
-        timeName.setVisible(true);
+            MyThread mt = new MyThread("DigitsOfPiSpigot", d, k);
+            Timer t = new Timer();
+            t.start();
+            mt.start();//d.Digits(k);
+            timetaken = t.stop();
+            newtime = TimeUnit.toTimeUnit(timetaken, TimeUnit.Milli);
 
-        timeLabel.setText(String.valueOf(newtime));
+            timeName.setVisible(true);
+            timeLabel.setVisible(true);
+            timeLabel.setText(String.valueOf(newtime));
 
-        d=(DigitsOfPiSpigot)mt.getBenchClass();
+            d = (DigitsOfPiSpigot) mt.getBenchClass();
 
-
-        String scoreString = String.format("%.0f",k/Math.sqrt(newtime));
-        scoreName.setVisible(true);
-        displayScore.setText(String.valueOf(scoreString));
-        piArea.setText(d.toDisplay);
-
-
-
-
+            String scoreString = String.format("%.0f", k / Math.sqrt(newtime));
+            scoreName.setVisible(true);
+            displayScore.setVisible(true);
+            displayScore.setText(String.valueOf(scoreString));
+            piArea.setText(d.toDisplay);
+        }catch (EnterAValidNumber e)
+        {
+            timeName.setVisible(false);
+            timeLabel.setVisible(false);
+            scoreName.setVisible(false);
+            displayScore.setVisible(false);
+            piException.setText(e.getMessage());
+        }
     }
+
     public void backButtonOnAction(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("startInterface.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
-
-
-
 }
 
 

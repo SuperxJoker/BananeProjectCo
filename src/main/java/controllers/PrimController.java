@@ -1,5 +1,7 @@
 package controllers;
 
+import Exceptions.EnterAValidNumber;
+import Services.IncorrectInput;
 import bench.cpu.MyThread;
 import bench.cpu.generateSieveOfEratosthenes;
 import javafx.animation.TranslateTransition;
@@ -23,6 +25,7 @@ import timming.Timer;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class PrimController  {
@@ -47,6 +50,9 @@ public class PrimController  {
     private Button backButton;
     @FXML
     private ImageView Drummerbanana;
+    @FXML
+    private Label primException;
+
     public void initialize(){
         timeName.setVisible(false);
         scoreName.setVisible(false);
@@ -71,37 +77,54 @@ public class PrimController  {
 
        double time1 = 0;
 
-       generateSieveOfEratosthenes warmup = new generateSieveOfEratosthenes();
-       warmup.generateSieveOfEratosthenes2(100000);
+        generateSieveOfEratosthenes warmup = new generateSieveOfEratosthenes();
+        warmup.generateSieveOfEratosthenes2(100000);
 
         generateSieveOfEratosthenes test = new generateSieveOfEratosthenes();
-        k = Integer.parseInt(String.valueOf(digitsField.getText()));
-        MyThread mt = new MyThread("generateSieveOfEratosthenes",test,k);
-       // test.sieveOfEratosthenes(k);
-        Timer t = new Timer();
-        t.start();
-        mt.start();//test.generateSieveOfEratosthenes2(k);
-        timetaken = t.stop();
-       // int count = test.getContor();
 
-        time1 = TimeUnit.toTimeUnit(timetaken, TimeUnit.Milli);
+        primException.setText("");
+        try {
+            IncorrectInput incorrectInput = new IncorrectInput();
+            incorrectInput.getCorrectNumber(digitsField.getText().matches("[0-9]+"));
+            incorrectInput.checkIncorrect();
 
-        test=(generateSieveOfEratosthenes) mt.getBenchClass();
+            k = Integer.parseInt(String.valueOf(digitsField.getText()));
+            MyThread mt = new MyThread("generateSieveOfEratosthenes", test, k);
+            // test.sieveOfEratosthenes(k);
+            Timer t = new Timer();
+            t.start();
+            mt.start();//test.generateSieveOfEratosthenes2(k);
+            timetaken = t.stop();
+            // int count = test.getContor();
 
-        String scoreString = String.format("%.0f",Math.sqrt(k)/Math.log(time1*1000)+1);
+            time1 = TimeUnit.toTimeUnit(timetaken, TimeUnit.Milli);
 
-        //test.setPrim(k);
-        //System.out.println(test.getPrim());
+            test = (generateSieveOfEratosthenes) mt.getBenchClass();
 
-        timeName.setVisible(true);
-        scoreName.setVisible(true);
-        timeLabel.setText(String.valueOf(time1));
-        displayScore.setText(String.valueOf(scoreString));
-        primeArea.setText(String.valueOf(test.getPrim()));
-       // System.out.println(count);
+            String scoreString = String.format("%.0f", Math.sqrt(k) / Math.log(time1 * 1000) + 1);
+
+            //test.setPrim(k);
+            //System.out.println(test.getPrim());
+
+            timeName.setVisible(true);
+            scoreName.setVisible(true);
+            timeLabel.setVisible(true);
+            displayScore.setVisible(true);
+            timeLabel.setText(String.valueOf(time1));
+            displayScore.setText(String.valueOf(scoreString));
+            primeArea.setText(String.valueOf(test.getPrim()));
+            // System.out.println(count);
+        }catch(EnterAValidNumber e)
+        {
+            timeLabel.setVisible(false);
+            timeName.setVisible(false);
+            scoreName.setVisible(false);
+            displayScore.setVisible(false);
+            primException.setText(e.getMessage());
+        }
     }
     public void backButtonOnAction(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("startInterface.fxml"));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("startInterface.fxml")));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
