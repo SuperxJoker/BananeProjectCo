@@ -112,18 +112,14 @@ public class TestController {
         scoreName.setVisible(true);
         displayScore.setText(String.valueOf(scoreString));
         piArea.setText(d.toDisplay);
-
-
-
-
     }
+
     public void backButtonOnAction(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("startinterface.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
 
