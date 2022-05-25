@@ -1,12 +1,16 @@
 package controllers;
 import java.io.IOException;
 
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class StageController {
 
@@ -14,6 +18,19 @@ public class StageController {
     private Scene scene;
     private Parent root;
 
+    @FXML
+    private ImageView Dreamteam;
+    public void initialize(){
+
+
+        TranslateTransition translate = new TranslateTransition();
+        translate.setNode(Dreamteam);
+        translate.setDuration(Duration.millis(10000));
+        translate.setCycleCount(TranslateTransition.INDEFINITE);
+        translate.setByX(-500);
+        translate.setAutoReverse(true);
+        translate.play();
+    }
     public void switchToScene1(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("no1.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
