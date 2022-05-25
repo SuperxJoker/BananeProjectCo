@@ -71,7 +71,7 @@ public class FibboController {
     }
 
     public void backButtonOnAction(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("startinterface.fxml"));
+        root = FXMLLoader.load(getClass().getResource("startInterface.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

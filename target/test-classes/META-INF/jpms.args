@@ -1,0 +1,4 @@
+--patch-module
+BananeProject=_
+--add-reads
+BananeProject=ALL-UNNAMED
